@@ -8,15 +8,11 @@ namespace NewTask
 {
     public class Tiger : Animal
     {
-        public override biom Biom { get ; set ; }
-        public override List<food> Foods { get; set; }
-        public override int Area { get ; set ; }
-        public override string Name { get ; set ; }
-        public override double AmountOfFood { get ; set; }
-        public override int Age { get ; set ; }
         public Tiger(string name, double amountOfFood, int age) :base(name,amountOfFood,age)
         {
-
+            Biom = Biom.tropic;
+            Foods= new List<food>() {food.meat };
+            Area = 200;
         }
         public override void MakeNoise()
         {
