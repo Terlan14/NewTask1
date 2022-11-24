@@ -8,20 +8,18 @@ namespace NewTask
 {
     public class Penguin : Animal
     {
-        public override biom Biom { get ; set ; }
-        public override List<food> Foods { get ; set ; }
-        public override int Area { get; set; }
-        public override string Name { get ; set ; }
-        public override double AmountOfFood { get ; set ; }
-        public override int Age { get ; set; }
         public Penguin(string name, double amountOfFood, int age) : base(name, amountOfFood, age)
         {
-
+            IsPredator=false;
+            Biom = Biom.tundra;
+            Foods = new List<food>() { food.fish };
+            Area = 100;
         }
         public override void MakeNoise()
         {
             Console.WriteLine($"NOoot NOoot said, penguin {Name}");
         }
+
     }
 
 }
