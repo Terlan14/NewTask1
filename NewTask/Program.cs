@@ -17,13 +17,9 @@ namespace NewTask
             Animal Alex = new Lion("Alex", 30, 5);
             place.AddAnimal(Marty);
             place.AddAnimal(Dumbo);
-            place.AddAnimal(Alex);
-            place.HungryAnimals();
-            place.PourFood(food.hay, 30);
+            //place.AddAnimal(Alex);
+            place.PourFood(food.hay, 200);
             place.LeftFood();
-            place.HungryAnimals();
-            place.LeftFood();
-            place.MakeSound();
         }
     }
 }

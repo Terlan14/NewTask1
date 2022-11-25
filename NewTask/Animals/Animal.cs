@@ -20,6 +20,5 @@ namespace NewTask
         public  int Age { get; set; }
         public double Hunger;
         public abstract void MakeNoise();
-
     }
 }

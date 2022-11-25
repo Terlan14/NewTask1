@@ -13,18 +13,17 @@ namespace NewTask
             Name = name;
             Biom = biom;
             Square = square;
-            Animals= new List<Animal>();
             Feeders = new Dictionary<food, double>();
         }
         public Dictionary<food, double> Feeders;
         public string Name;
         public Biom Biom;
         public int Square;
-        protected List<Animal> Animals;
+        protected List<Animal> Animals = new List<Animal>();
         public void AddAnimal(Animal animal)
         {
             bool CanLiveHere=false;
-            if (animal.Biom == Biom) 
+            if (animal.Biom == Biom && Square>animal.Area) 
             {
                 if (Animals.Count != 0)
                 {
@@ -77,13 +76,13 @@ namespace NewTask
                     }
                 }
             }
-            if (Feeders.ContainsKey(Food)) Feeders[Food] = amount;
+            if (Feeders.ContainsKey(Food)) Feeders[Food] += amount;
             else Feeders.Add(Food, amount);
         }
         public void HungryAnimals()
         {
             foreach(Animal a in Animals) 
-                if (a.Hunger > 0) Console.WriteLine($"{a.Name} is Hungry ): . Please, Feed him.");   
+                if (a.Hunger > 0) Console.WriteLine($"{a.Name} is Hungry ): . Please, Feed him{a.Foods} in {a.Hunger} amount.");   
         }
         public void LeftFood()
         {
